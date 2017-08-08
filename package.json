@@ -1,0 +1,15 @@
+{
+  "name": "hf-remake",
+  "version": "1.0.0",
+  "description": "My attempt to rebuild the Harbor Freight website as a slick and modern ecommerce site",
+  "main": "index.js",
+  "author": "Brandtley McMinn <labs@gbox.name>",
+  "license": "MIT",
+  "dependencies": {
+    "batch": "^0.6.1",
+    "bluebird": "^3.5.0",
+    "cheerio": "^1.0.0-rc.2",
+    "nedb": "^1.8.0",
+    "request": "^2.81.0"
+  }
+}
