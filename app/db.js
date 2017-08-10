@@ -22,6 +22,12 @@ function registerCollection(name) {
 registerCollection('products');
 registerCollection('reviews');
 registerCollection('images');
+registerCollection('brands');
+
+
+db.brands.ensureIndex({ fieldName: 'route', unique: true, sparse: true }, (err) => {
+
+});
 
 
 module.exports = db;

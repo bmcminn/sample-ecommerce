@@ -8,8 +8,12 @@
   "dependencies": {
     "batch": "^0.6.1",
     "bluebird": "^3.5.0",
+    "chalk": "^2.1.0",
     "cheerio": "^1.0.0-rc.2",
+    "express": "^4.15.4",
     "nedb": "^1.8.0",
-    "request": "^2.81.0"
+    "nodemon": "^1.11.0",
+    "request": "^2.81.0",
+    "to-markdown": "^3.1.0"
   }
 }

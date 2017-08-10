@@ -1,0 +1,13 @@
+{
+    "ignore": [
+        ".git"
+    ,   "node_modules/**/node_modules"
+    ,   "content/"
+    ,   "public/"
+    ,   "data/"
+    ],
+    "watch": [
+        "."
+    ],
+    "ext": "js json twig html yaml"
+}
