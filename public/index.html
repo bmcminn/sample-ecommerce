@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sample Ecommerce Site</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="/main.css">
+</head>
+<body>
+
+    <div id="app">
+
+        <header class="sticky">
+            <nav class="row middle">
+                <router-link :to="{'name': 'catalog', params: {'page': 1 }}">Catalog</router-link>
+                <router-link :to="{'name': 'about'}">About</router-link>
+                <router-link :to="{'name': 'contact'}">Contact</router-link>
+                <a href="http://facebook.com" target="_blank" rel="noreferrer"><i class="fab fa-facebook"></i></a>
+            </nav>
+        </header>
+
+        <router-view></router-view>
+    </div>
+
+
+    <template type="text/x-template" id="productList">
+        padfjksdl
+        {{ products[0].name }}
+        <ul class="products-list">
+            <li :for="product of productList"
+                class="card product-card"
+            >
+            <!--
+                <router-link :to="{ name: 'productDetails', params: { id: product.id }}">
+                    {{ product.name }}
+                </router-link>
+             -->
+
+                <img :src="product.images[0]">
+            </li>
+        </ul>
+    </template>
+
+
+    <template type="text/x-template" id="productDetails">
+        <div>
+            Product {{ $route.params.id }}
+            <img :src="product.images[0]">
+        </div>
+    </template>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.1/vue-router.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vuex/3.0.1/vuex.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+    <script src="/app.js"></script>
+</body>
+</html>

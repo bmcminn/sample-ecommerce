@@ -1,0 +1,29 @@
+:root {
+    --color-border: #e3e3e3;
+}
+
+
+.sticky {
+    position: sticky;
+    top: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+.product-list {
+    margin: 0;
+    padding: 1rem;
+}
+
+
+.card {
+    border: 1px solid var(--color-border);
+}
+
+
+.product-list-card {
+
+}
