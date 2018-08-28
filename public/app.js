@@ -28,17 +28,29 @@ const TempComponent = {
 };
 
 
-const ProductsList = {
-    template: '#productList',
+const ProductList = {
+    name:       'ProductList',
+    template:   '#productList',
 
-    data: {
-        // profducts: this.$store.state.products,
-        products: [],
-        limit: 10,
+    data() {
+        return {
+            // profducts: this.$store.state.products,
+            limit: 10,
+            products: this.$store.state.products
+        }
     },
 
-    created: function() {
+    computed: {
+        products: function() {
+            return this.$store.state.products;
+        }
+
+    },
+
+    mounted: function() {
+        this.$store.dispatch('products');
         this.products = this.$store.state.products;
+        console.log(this.products);
     },
 
     beforeRouteUpdate: function(to, ref, next) {
@@ -54,7 +66,8 @@ const ProductsList = {
 
 
 const ProductDetails = {
-    template: '#productDetails',
+    name:       'ProductDetails',
+    template:   '#productDetails',
 
     data: {
         product: null
@@ -93,12 +106,12 @@ const router = new VueRouter({
         {
             name: 'home',
             path: '/',
-            component: ProductsList,
+            component: ProductList,
         },
         {
             name: 'catalog',
             path: '/catalog/:page',
-            component: ProductsList,
+            component: ProductList,
         },
         {
             name: 'product',
@@ -122,8 +135,9 @@ const router = new VueRouter({
 
 const app = new Vue({
     el:     '#app',
-    router: router,
-    store:  store,
+    name:   'root',
+    router,
+    store,
 
     created: function() {
         this.$store.commit('getProducts');
@@ -133,7 +147,11 @@ const app = new Vue({
 
     },
 
+
     components: {
-        ProductsList
+        ProductList
     }
 });
+
+
+Vue.config.devtools = true

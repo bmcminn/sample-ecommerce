@@ -6,7 +6,7 @@
   "author": "Brandtley McMinn <labs@gbox.name>",
   "license": "MIT",
   "scripts": {
-    "api": "json-server ./data/db.json --static ./public"
+    "serve": "json-server ./data/db.json --static ./public"
   },
   "dependencies": {
     "batch": "^0.6.1",
